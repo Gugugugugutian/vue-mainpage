@@ -1,0 +1,29 @@
+/* 
+这个CSS确定页面的大小，边框等。
+适应各种大小的显示设备。 
+
+Gutian 2024/1/31
+*/
+body, html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* border: 0.5px solid black; */
+    background-color: #f0f8ff;
+    width: 100%;
+    min-height: 100%;
+}
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(241, 255, 172);
+    border-color: rgb(241, 255, 172);
+    border-color: rgb(241, 255, 172);
+}
+#top {
+    left: 0;
+    top: 0;
+}
