@@ -1,12 +1,10 @@
 <script>
     import Searchbar from './Searchbar.vue';
     import Iptoolkit from './compos/iptoolkit.vue';
-    import linktoolkit from './compos/linktoolkit.vue';
     export default {
         components: {
     Searchbar,
     Iptoolkit,
-    linktoolkit
 }
     }
 </script>
@@ -37,7 +35,6 @@
         overflow-x: scroll;
         background-color: rgba(32, 32, 32, 0.05);
         height: max-content;
-
         margin-top: 20vh;
     }
     #tk div {
@@ -48,6 +45,7 @@
         border-radius: 15px;
         height: 30vh;
         min-width: 30vh;
+        overflow-y: auto;
     }
     #s {
         margin: 1vh 1vi;

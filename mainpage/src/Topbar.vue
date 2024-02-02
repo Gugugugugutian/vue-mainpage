@@ -58,9 +58,8 @@ import Link1 from './topbar/Link1.vue';
         position: fixed; 
         right: 0; 
         top: 9vh;
-
         max-height: 91vh;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     #listmenu li {
         font-size: large;
@@ -68,9 +67,13 @@ import Link1 from './topbar/Link1.vue';
         font-size: 3.5vh;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
+        border-bottom: darkblue 2px solid;
 
     }
     #listmenu li a{
+        display: block;
+        width: 100%;
+        text-align: center;
         color: darkblue;
     }
     #listmenu li a:hover{
@@ -92,7 +95,6 @@ import Link1 from './topbar/Link1.vue';
     ul {
         margin: 0;
         padding: 0;
-        list-style-type: none;
     }
     li {
         margin: 2px;
