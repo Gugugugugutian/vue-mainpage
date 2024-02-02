@@ -1,9 +1,13 @@
 <script>
     import Searchbar from './Searchbar.vue';
+    import Iptoolkit from './compos/iptoolkit.vue';
+    import linktoolkit from './compos/linktoolkit.vue';
     export default {
         components: {
-            Searchbar
-        }
+    Searchbar,
+    Iptoolkit,
+    linktoolkit
+}
     }
 </script>
 <template>
@@ -13,19 +17,51 @@
         </div>
         <div id="tk">
             <!-- toolkits -->
+            <Iptoolkit></Iptoolkit>
+            <Iptoolkit></Iptoolkit>
+            <Iptoolkit></Iptoolkit>
+            <Iptoolkit></Iptoolkit>
+            <Iptoolkit></Iptoolkit>
+        </div>
+        <div id="ld">
+            <!-- lists -->
+
         </div>
     </div>
 </template>
 <style>
+    #tk {
+        display: flex; 
+        flex-wrap: none;
+        width: 100%;
+        overflow-x: scroll;
+        background-color: rgba(32, 32, 32, 0.05);
+        height: max-content;
+
+        margin-top: 20vh;
+    }
+    #tk div {
+        margin: 5px 5px 5px 5px;
+        color: darkblue;
+        background: linear-gradient(180deg, #f0f8ff,#97dbf6);
+        border: 2px solid darkblue;
+        border-radius: 15px;
+        height: 30vh;
+        min-width: 30vh;
+    }
     #s {
         margin: 1vh 1vi;
     }
     #s #d {
-        margin: 35vh auto 10vh auto;
+        margin: 25vh auto 20vh auto;
     }
     #index_main {
         margin: auto;
         width: 80vi;
         max-width: 960px;
+    }
+    body {
+        background: linear-gradient(180deg, #f0f8ff,#97dbf6);
+        background-attachment: fixed;
     }
 </style>
