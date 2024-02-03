@@ -1,11 +1,20 @@
 <script>
     import Searchbar from './Searchbar.vue';
     import Iptoolkit from './compos/iptoolkit.vue';
+    import List1 from './compos/list1.vue';
+    import bt from './compos/bt.vue'
     export default {
         components: {
-    Searchbar,
-    Iptoolkit,
-}
+            Searchbar,
+            Iptoolkit,
+            List1,
+            bt
+        },
+        data() {
+            return {
+                list_: ""
+            }
+        }
     }
 </script>
 <template>
@@ -23,11 +32,19 @@
         </div>
         <div id="ld">
             <!-- lists -->
-
+            <List1></List1>
+            <List1></List1>
+        </div>
+        <div id="bt">
+            <!-- button -->
+            <bt style="color: darkblue;"></bt>
         </div>
     </div>
 </template>
 <style>
+    #ld {
+        width: 100%;
+    }
     #tk {
         display: flex; 
         flex-wrap: none;
@@ -36,6 +53,7 @@
         background-color: rgba(32, 32, 32, 0.05);
         height: max-content;
         margin-top: 20vh;
+        border-radius: 15px;
     }
     #tk div {
         margin: 5px 5px 5px 5px;

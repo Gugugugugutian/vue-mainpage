@@ -40,8 +40,7 @@ import Link1 from './topbar/Link1.vue';
 <template>
     <div id="top">
         <Link1 style="width: 70%;" :url="u" :content="t"></Link1>
-        <Link1 style="width: 15%; text-align: center;" :url="umail" :content="tmail"></Link1>
-        <Link1 style="width: 15%; text-align: center;" @click=rd :url="umenu" :content="tmenu"></Link1>
+        <Link1 style="width: 29%; text-align: center;" @click=rd :url="umenu" :content="tmenu"></Link1>
     </div>
 
     <!-- <listmenu id="listmenu" :d=d :sites=tsites></listmenu> -->
@@ -54,9 +53,9 @@ import Link1 from './topbar/Link1.vue';
 <style>
     #listmenu {
         text-align: center; 
-        width: 20%; 
+        width: 29%; 
         position: fixed; 
-        right: 0; 
+        right: 2%; 
         top: 9vh;
         max-height: 91vh;
         overflow-y: auto;
@@ -68,7 +67,6 @@ import Link1 from './topbar/Link1.vue';
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
         border-bottom: darkblue 2px solid;
-
     }
     #listmenu li a{
         display: block;
