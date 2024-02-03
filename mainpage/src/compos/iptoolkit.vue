@@ -41,7 +41,7 @@
             async fetchIPData() {
             try {
                 // Fetch IP address
-                const response = await fetch("https://api64.ipify.org?format=json");
+                const response = await fetch("https://api.ipify.org?format=json");
                 const data = await response.json();
                 this.ipv4 = data.ip;
 

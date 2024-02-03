@@ -6,9 +6,7 @@ import Link1 from './topbar/Link1.vue';
         return {
             t: "gugugugugutian",
             u: "#",
-            tmail: "MAIL",
-            umail: "#mail",
-            tmenu: "MENU",
+            tmenu: "菜单",
             umenu: "#menuopeninst",
 
             d: false, //display of listmenu
@@ -64,7 +62,7 @@ import Link1 from './topbar/Link1.vue';
         font-size: large;
         padding: 6px 0;
         font-size: 3.5vh;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.9);
         border-radius: 5px;
         border-bottom: darkblue 2px solid;
     }

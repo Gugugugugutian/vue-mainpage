@@ -6,42 +6,26 @@ export default {
     },
     props:
     {
-        tafter: {
-            // 一段文字，放在链接列表之前
-            type: String,
-            default: "notdefined"
-        },
-        tafterdisplay: {
-            // 这段文字是否显示
-            type: Boolean,
-            default: true
-        },
-        tl1: {
-            // 列表的标题
-            type: String,
-            default: "LIST1",
-        },
-        id1: {
-            // 列表的ID值
-            type: String,
-            default: "#notdefined"
-        },
-        sites: {
-            // 列表中，展示的网站
+        listinfo: {
             type: Array,
-            default: [
-                {
-                    u:'#notdefined',
-                    n:'notdefined',
-                    discribe: 'notdefined'
-                },
-                {
-                    u:'#notdefined',
-                    n:'notdefined',
-                    discribe: 'notdefined'
-                }
-            ]
-        },
+            default: {
+                tafter: "undefined undefined undefined undefined undefined undefined undefined",
+                tafterdisplay: true,
+                tl1: "LIST1",
+                id1: "#undefined",
+                sites: [
+                    {
+                        u:"#undefined",
+                        n:"undefined",
+                        discribe:"undefined undefined undefined undefined undefined undefined",
+                    },{
+                        u:"#undefined",
+                        n:"",
+                        discribe:"undefined undefined undefined undefined undefined undefined",
+                    },
+                ]
+            }
+        }
     },
 }
 </script>
@@ -49,18 +33,18 @@ export default {
 <div class="list1">
     <div>
         <h2>
-            <a :href="id1" style="margin-right: 5px;">
-                {{ tl1 }}
+            <a :href="listinfo.id1" style="margin-right: 5px;">
+                {{ listinfo.tl1 }}
                 <p style="display: inline; font-size: medium; font-weight: normal;">
-                    {{ id1 }}
+                    {{ listinfo.id1 }}
                 </p>
             </a>
         </h2>
     </div>
-    <p id="taf" v-show="tafterdisplay">{{ tafter }}</p>
+    <p id="taf" v-show="listinfo.tafterdisplay">{{ listinfo.tafter }}</p>
     <ul>
-        <li v-for="site in sites" style="display: flex;">
-            <a :href="site.u" style="padding-left: 5px;">{{ site.n }}</a>
+        <li v-for="site in listinfo.sites" style="display: flex;">
+            <a :href="site.u" style="padding-left: 5px; min-width: 100px;">{{ site.n }}</a>
             <p style="display: inline;">{{ site.discribe }}</p>
         </li>
     </ul>
@@ -77,10 +61,10 @@ export default {
         padding-bottom: 15px;
     }
     .list1 h2 {
-        border-bottom: 2px solid darkblue;
         width: 99%;
         text-align: left;
         margin-left: 1%;
+        border-bottom: 2px solid darkblue;
     }
     .list1 h2 a {
         display: inline-block;
@@ -103,7 +87,7 @@ export default {
     }
     .list1 li a {
         top: 0;
-        border-bottom: 1px dotted darkblue;
+        text-decoration: underline;
     }
     .list1 li p {
         margin: 0;
@@ -113,7 +97,8 @@ export default {
         font-weight: normal;
     }
     .list1 #taf {
-        border-left: 1px solid darkblue;
+        border-left: 1px solid rgb(26, 119, 190);
+        color: rgb(26, 119, 190);
         margin: 0 15px 5px; 
         padding-left: 5px;
     }
