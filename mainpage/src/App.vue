@@ -58,7 +58,21 @@
                             u:"https://singlelogin.se/",
                             n:"Zlibrary",
                             discribe:"Zlibrary的最新链接。下载速度相对较快，但是不付费每天只能下载10本书。资源很全，需要注册。",
+                        },{
+                            u:"https://mail.google.com/",
+                            n:"Gmail",
+                            discribe:"国际化的谷歌邮箱系统，但是需要一点上网技巧才能使用。"
                         },
+                        {
+                            u:"https://ditu.amap.com/",
+                            n:"高德地图",
+                            discribe:"在大陆地区比较好用的网页版地图。"
+                        },
+                        {
+                            u:"https://mail.qq.com/",
+                            n:"QQ邮箱",
+                            discribe:"可能是中国大陆最常用到的邮箱系统。"
+                        }
                     ]
                 },
                 // 校园 campus
@@ -170,6 +184,20 @@
                             u:"https://bili.iiilab.com/",
                             n:"iiilab下载站",
                             discribe:"解析主流网站视频并提供下载。可以把视频下载到本地，再由本地软件转换为各种格式。支持Youtube, Bilibili等大型视频网站。",
+                        },{
+                            u:"https://mail.google.com/",
+                            n:"Gmail",
+                            discribe:"国际化的谷歌邮箱系统，但是需要一点上网技巧才能使用。"
+                        },
+                        {
+                            u:"https://ditu.amap.com/",
+                            n:"高德地图",
+                            discribe:"在大陆地区比较好用的网页版地图。"
+                        },
+                        {
+                            u:"https://mail.qq.com/",
+                            n:"QQ邮箱",
+                            discribe:"可能是中国大陆最常用到的邮箱系统。"
                         },
                     ]
                 },

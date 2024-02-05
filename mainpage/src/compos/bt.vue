@@ -2,11 +2,10 @@
 export default {
     props: {
         datetime: {
-            // 显示现在的时间和日期，并每秒更新一次
             type: String,
             default: function() {
-                const hongKongTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Hong_Kong' });
-                return hongKongTime;
+                const a = new Date().toLocaleString('en-US', { timeZone: 'Asia/Hong_Kong' });
+                return a;
             }
         }
     }
@@ -18,11 +17,12 @@ export default {
         <a href="https://gugugugugutian.github.io">gugugugugutian.github.io</a>
     </h2>
     <p style="font-weight: bold;">
-        by gugugugugutian, Version 3.0.240204 <br/>
+        by gugugugugutian, Version 3.0.240205 <br/>
         Loaded at {{ datetime }} <br/>
     </p>
     <p>
         本网站并没有在工信部备案。<br/>
+        网站源代码完全公开，请见<a href="https://github.com/Gugugugugutian/vue-mainpage" style="text-decoration: underline;" >这个链接</a>。
         如有疑问或是建议，请联系<a href="mailto:gugugugugutian@outlook.com?subject=Mail%20from%20personal%20Github%20website(VUE)" style="text-decoration: underline;">作者邮箱</a>。<br/>
     </p>
     <p style="font-weight: bold; margin-top: 3vh;">
