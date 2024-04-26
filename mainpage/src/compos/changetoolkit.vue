@@ -3,6 +3,7 @@
         <h2>汇率查询</h2>
         <input type="number" v-model="amount" :placeholder="selectedCurrency" :value="amount">
         <ul style="list-style: none; user-select: none;">
+          <li style="user-select: none; font-size: 2vh;">{{ log }}</li>
             <li v-for="obj in Currency" style="display: block;">
                 <input type="radio" v-model="selectedCurrency" :value="obj" :id="obj">
                 <label :for="obj">{{ obj }}: {{ convertedAmounts[obj] }}</label>
@@ -26,6 +27,7 @@
         },
         selectedCurrency: 'HKD',
         Currency: ['CNY', 'HKD', 'USD', 'JPY', 'GBP'],
+        log: "汇率未获取",
       }
     },
     watch: {
@@ -37,23 +39,34 @@
       }
     },
     mounted() {
-      this.convertCurrency();
+      this.fetchRate();
     },
     methods: {
-      async convertCurrency() {
+      convertCurrency() {
+        const rate = this.rates[this.selectedCurrency];
+        for (let currency in this.convertedAmounts) {
+          this.convertedAmounts[currency] = (this.amount * this.rates[currency] / rate).toFixed(3);
+        }
+      },
+      updateDate() {
+        let now = new Date();
+        return now.toLocaleDateString();
+      },
+      async fetchRate() {
         try {
           const response = await fetch('https://v6.exchangerate-api.com/v6/ce99b55cf60f1adcde528962/latest/CNY');
           const data = await response.json();
+
           this.rates = data.conversion_rates;
-          
-          const rate = this.rates[this.selectedCurrency];
-          for (let currency in this.convertedAmounts) {
-            this.convertedAmounts[currency] = (this.amount * this.rates[currency] / rate).toFixed(3);
-          }
-        } catch (error) {
-          console.error("Error fetching exchange rates:", error);
+          this.convertCurrency();
+          this.log = "汇率更新于" + this.updateDate();
+          console.log('[Toolkit #002] Finished. Currency convertion rate: 1CNY = ' + this.rates['USD'] + 'USD. ');
         }
-      }
+        catch (err) {
+          this.log = err;
+          console.error("Error fetching exchange rates:", err);
+        }
+      },
     }
   }
   </script>

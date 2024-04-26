@@ -272,7 +272,7 @@
             <!-- toolkits -->
             <Iptoolkit></Iptoolkit>
             <changetoolkit></changetoolkit>
-            <pigeontoolkit></pigeontoolkit>
+            <!-- <pigeontoolkit></pigeontoolkit> -->
         </div>
         <div id="ld">
             <!-- lists -->

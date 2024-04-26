@@ -2,6 +2,10 @@
 
 使用Vue3重构我的个人主页。[点击这里可以访问最新版本网页](https://gugugugugutian.github.io/)
 
+## Version 3.0.240427
+
+使用异步优化汇率转换插件。
+
 ## Version 3.0.240210
 
 更换了汇率转换的API。

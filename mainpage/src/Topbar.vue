@@ -4,16 +4,17 @@ import Link1 from './topbar/Link1.vue';
   export default {
     data() {
         return {
-            t: "gugugugugutian",
             u: "#",
             tmenu: "菜单",
             umenu: "#menuopeninst",
-
             d: false, //display of listmenu
-            
         };
     },
     props: {
+        t: {
+            type: String,
+            default: "gugugugugutian",
+        },
         tsites: {
             type: Array,
             default: [
@@ -37,7 +38,7 @@ import Link1 from './topbar/Link1.vue';
 </script>
 <template>
     <div id="top">
-        <Link1 style="width: 70%;" :url="u" :content="t"></Link1>
+        <Link1 style="width: 70%;" :url="u" :content=t></Link1>
         <Link1 style="width: 29%; text-align: center;" @click=rd :url="umenu" :content="tmenu"></Link1>
     </div>
 

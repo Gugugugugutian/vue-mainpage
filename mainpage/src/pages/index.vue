@@ -1,8 +1,7 @@
 <script>
-import Topbar from './Topbar.vue';
-import App from './App.vue';
+import Topbar from '../Topbar.vue';
+import App from '../App.vue';
 export default {
-    // props: 
     data() {
         return {
             TopbarSites: [

@@ -7,7 +7,7 @@ export default {
     props:
     {
         listinfo: {
-            type: Array,
+            type: Object,
             default: {
                 tafter: "undefined undefined undefined undefined undefined undefined undefined",
                 tafterdisplay: true,
