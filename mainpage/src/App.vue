@@ -158,7 +158,7 @@ export default {
             u: "https://flask.palletsprojects.com/",
           }, {
             n: "Linux",
-            u: "https://www.linuxidc.com/",
+            u: "https://docs.kernel.org/",
           },
         ],
       },

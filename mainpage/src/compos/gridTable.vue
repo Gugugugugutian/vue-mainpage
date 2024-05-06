@@ -23,7 +23,7 @@ export default {
   <table style="width: 100%; table-layout: fixed">
     <tr v-for="(item, index) in config.tableSites" :key="index">
       <td class="webTable" v-for="(item2, index2) in item" :key="index2">
-        <a class="gridTableItem" :href="item2.u">
+        <a class="gridTableItem" style="overflow: hidden; font-size: 16px" :href="item2.u">
           <b>{{item2.n}}</b>
         </a>
       </td>

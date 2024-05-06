@@ -35,18 +35,31 @@ export default {
       },
     },
   mounted() {
-    // 如果有表格，将前tableLineSize个网站放到tableSites中
-    if(this.config.isTable) {
-      console.log("This is a block with table: ", this.listinfo.tl1, this.config.tableSize);
+  // 获取窗口宽度
+  const windowWidth = window.innerWidth;
+  let adjustedTableLineSize = this.config.tableLineSize;
 
-      let v = this.listinfo.sites.splice(0, this.config.tableSize);
-      console.log("=>Sites in table: ", v, "\n=>Sites in list: ", this.listinfo.sites);
-
-      for(let i=0; i<this.config.tableSize; i+=this.config.tableLineSize) {
-        this.config.tableSites.push(v.splice(0, this.config.tableLineSize));
-      }
+  // 如果有表格，先进行宽度适应性调整
+  if (this.config.isTable) {
+    while (
+      (windowWidth / adjustedTableLineSize) * 100 < 15 && // 确保每个tableLineSize宽度至少为15vh
+      adjustedTableLineSize > 1 // 防止tableLineSize减到0以下
+    ) {
+      adjustedTableLineSize -= 1; // 减小tableLineSize
     }
-  },
+
+    console.log("Adjusted tableLineSize to:", adjustedTableLineSize);
+
+    // 使用调整后的tableLineSize进行数据处理
+    let v = this.listinfo.sites.splice(0, this.config.tableSize);
+    console.log("=>Sites in table: ", v, "\n=>Sites in list: ", this.listinfo.sites);
+
+    for (let i = 0; i < this.config.tableSize; i += adjustedTableLineSize) {
+      this.config.tableSites.push(v.splice(0, adjustedTableLineSize));
+    }
+  }
+},
+
   watch: {
   }
 }
