@@ -1,12 +1,10 @@
 <script>
+import GridTable from "@/compos/gridTable.vue";
 export default {
-    data() {
-        return {
-        }
-    },
+  components: {GridTable},
     props:
     {
-        listinfo: {
+      listinfo: {
             type: Object,
             default: {
                 tafter: "undefined undefined undefined undefined undefined undefined undefined",
@@ -23,10 +21,34 @@ export default {
                         n:"",
                         discribe:"undefined undefined undefined undefined undefined undefined",
                     },
-                ]
+                ],
             }
+        },
+      config: {
+        type: Object,
+        default: {
+          isTable: false,
+          tableSize: 5,
+          tableLineSize: 3,
+          tableSites: [],
         }
+      },
     },
+  mounted() {
+    // 如果有表格，将前tableLineSize个网站放到tableSites中
+    if(this.config.isTable) {
+      console.log("This is a block with table: ", this.listinfo.tl1, this.config.tableSize);
+
+      let v = this.listinfo.sites.splice(0, this.config.tableSize);
+      console.log("=>Sites in table: ", v, "\n=>Sites in list: ", this.listinfo.sites);
+
+      for(let i=0; i<this.config.tableSize; i+=this.config.tableLineSize) {
+        this.config.tableSites.push(v.splice(0, this.config.tableLineSize));
+      }
+    }
+  },
+  watch: {
+  }
 }
 </script>
 <template>
@@ -42,6 +64,7 @@ export default {
         </h2>
     </div>
     <p id="taf" v-show="listinfo.tafterdisplay">{{ listinfo.tafter }}</p>
+    <GridTable v-if="config.isTable" :config="config" />
     <ul>
         <li v-for="site in listinfo.sites" style="display: flex;">
             <a :href="site.u" style="padding-left: 5px; min-width: 100px;">{{ site.n }}</a>
