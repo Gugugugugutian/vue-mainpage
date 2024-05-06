@@ -363,7 +363,7 @@ export default {
     </div>
     <div id="ld">
       <!-- lists -->
-      <List1 :listinfo="list_document" :config="docTableConfig" id="changyong"></List1>
+      <List1 :listinfo="list_document" :config="docTableConfig" id="document"></List1>
       <List1 :listinfo="list_changyong" :config="tableConfig" id="changyong"></List1>
       <List1 :listinfo="list_campus" id="campus"></List1>
       <List1 :listinfo="list_ebook" id="ebook"></List1>

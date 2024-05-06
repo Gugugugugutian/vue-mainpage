@@ -6,6 +6,7 @@ export default {
         return {
             TopbarSites: [
                 {u:'#', n:'搜索'},
+                {u:'#document', n:'文档'},
                 {u:'#changyong', n:'常用'},
                 {u:'#campus', n:'校园'},
                 {u:'#ebook', n:'读书'},
